@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Songo - Jeu Traditionnel Camerounais (Version Local)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>SONGO</h1>
+            <p>Jeu traditionnel camerounais - Version local (2 joueurs sur le même ordinateur)</p>
+        </header>
+
+        <!-- Game Status Bar -->
+        <div class="status-bar">
+            <div class="status-card" id="turnStatus">
+                <span class="status-label">Tour de</span>
+                <span class="status-player" id="turnPlayer">Joueur 1</span>
+            </div>
+            <button id="resetGameBtn" class="reset-btn">🔄 Nouvelle partie</button>
+        </div>
+
+        <!-- Main Game Area -->
+        <main class="game-area">
+            <!-- Player 2 (Top) -->
+            <div class="player player-top" id="player2">
+                <div class="player-info">
+                    <div class="avatar">👤</div>
+                    <div class="player-details">
+                        <h3 class="player-name">JOUEUR 2</h3>
+                        <div class="score">Score: <span id="player2Score">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="board" id="board"></div>
+
+            <!-- Player 1 (Bottom) -->
+            <div class="player player-bottom" id="player1">
+                <div class="player-info">
+                    <div class="avatar">👤</div>
+                    <div class="player-details">
+                        <h3 class="player-name">JOUEUR 1</h3>
+                        <div class="score">Score: <span id="player1Score">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <h2 id="gameOverMessage">🏆 Victoire !</h2>
+                <p id="gameOverDetails"></p>
+                <button id="playAgainBtn">Jouer encore</button>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h4>Règles du Songo</h4>
+            <ul>
+                <li>Chaque joueur commence avec <strong>5 graines</strong> dans chacune de ses 7 cases</li>
+                <li>À votre tour, cliquez sur une de vos cases qui contient des graines</li>
+                <li>Les graines sont semées une par une dans les cases suivantes</li>
+                <li>Si la dernière graine tombe dans votre <strong>grande case</strong>, vous rejouez</li>
+                <li>Si la dernière graine tombe dans une case adverse avec <strong>2 ou 3 graines</strong>, vous les capturez</li>
+                <li>Le premier joueur qui atteint <strong>36 graines</strong> gagne !</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
